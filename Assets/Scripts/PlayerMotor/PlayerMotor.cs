@@ -17,6 +17,7 @@ public class PlayerMotor : MonoBehaviour
     public Animator animator;
     
     private BaseState _state;
+    private bool _isPaused;
 
     private void Start()
     {
@@ -25,10 +26,14 @@ public class PlayerMotor : MonoBehaviour
 
         _state = GetComponent<RunningState>();
         _state.Construct();
+
+        _isPaused = true;
     }
 
     private void Update()
     {
+        if (_isPaused)
+            return;
         UpdateMotor();
     }
 
@@ -95,5 +100,16 @@ public class PlayerMotor : MonoBehaviour
         {
             verticalVelocity = -terminalVelocity;
         }
+    }
+    
+    // Pausing player
+    public void PausePlayer()
+    {
+        _isPaused = true;
+    }
+
+    public void ResumePlayer()
+    {
+        _isPaused = false;
     }
 }
