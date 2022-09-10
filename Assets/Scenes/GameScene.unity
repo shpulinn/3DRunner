@@ -789,6 +789,7 @@ GameObject:
   - component: {fileID: 731363394}
   - component: {fileID: 731363396}
   - component: {fileID: 731363397}
+  - component: {fileID: 731363398}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -845,6 +846,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 184cd7486cca6a2469f0763fd38cb291, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &731363398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 731363393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1156e92ec61b6264c963934df8946df1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &734538790
@@ -1402,6 +1415,7 @@ MonoBehaviour:
   baseSidewaySpeed: 10
   gravity: 14
   terminalVelocity: 20
+  deathLayerName: Death
   Controller: {fileID: 0}
   animator: {fileID: 0}
 --- !u!4 &1090706289 stripped
@@ -1447,6 +1461,32 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   slideDuration: 1
+--- !u!114 &1090706293
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090706284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1b968e8a10e2d74082e3bdd74b62e21, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  knockbackForce: {x: 0, y: 4, z: -3}
+--- !u!114 &1090706294
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1090706284}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b9266be08a6a745ba5dc2d4b917474, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  verticalDistance: 25
 --- !u!1 &1093459936
 GameObject:
   m_ObjectHideFlags: 0
