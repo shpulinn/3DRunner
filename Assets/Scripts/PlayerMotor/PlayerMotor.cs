@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 public class PlayerMotor : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class PlayerMotor : MonoBehaviour
     public float baseSidewaySpeed = 10.0f;
     public float gravity = 14.0f;
     public float terminalVelocity = 20.0f;
+    public string deathLayerName;
 
     public CharacterController Controller;
     public Animator animator;
@@ -111,5 +113,18 @@ public class PlayerMotor : MonoBehaviour
     public void ResumePlayer()
     {
         _isPaused = false;
+    }
+
+    public void RespawnPlayer()
+    {
+        ChangeState(GetComponent<RespawnState>());
+    }
+
+    public void OnControllerColliderHit(ControllerColliderHit hit)
+    {
+        if (deathLayerName == LayerMask.LayerToName(hit.gameObject.layer))
+        {
+            ChangeState(GetComponent<DeathState>());
+        }
     }
 }
