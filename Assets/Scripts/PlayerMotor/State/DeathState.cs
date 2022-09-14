@@ -24,6 +24,7 @@ public class DeathState : BaseState
         {
             _currentKnockback.z = 0;
             GameManager.Instance.ChangeState(GameManager.Instance.GetComponent<GameStateDeath>());
+            _currentKnockback = Vector3.zero;
         }
 
         return _currentKnockback;
