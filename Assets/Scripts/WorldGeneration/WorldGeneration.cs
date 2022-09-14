@@ -42,13 +42,8 @@ namespace WorldGeneration
                 Debug.Log("cameraTransform has assigned automatically");
             }
         }
-    
-        private void Update()
-        {
-            ScanPosition();
-        }
 
-        private void ScanPosition()
+        public void ScanPosition()
         {
             float cameraZ = cameraTransform.position.z;
             Chunk lastChunk = _activeChunks.Peek();
