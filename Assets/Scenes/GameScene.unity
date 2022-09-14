@@ -1006,6 +1006,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   PlayerMotor: {fileID: 1090706288}
+  WorldGeneration: {fileID: 1273248262}
+  SceneChunkGeneration: {fileID: 1273248264}
   cameras:
   - {fileID: 1459764759}
   - {fileID: 599846944}
