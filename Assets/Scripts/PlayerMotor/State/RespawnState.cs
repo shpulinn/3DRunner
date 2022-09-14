@@ -10,6 +10,8 @@ public class RespawnState : BaseState
     
     public override void Construct()
     {
+        _startTime = Time.time;
+        
         playerMotor.Controller.enabled = false;
         playerMotor.transform.position = new Vector3(0, verticalDistance, playerMotor.transform.position.z);
         playerMotor.Controller.enabled = true;
@@ -17,8 +19,6 @@ public class RespawnState : BaseState
         playerMotor.verticalVelocity = 0.0f;
         playerMotor.ChangeLane(0);
         playerMotor.animator?.SetTrigger("Respawn");
-
-        _startTime = Time.time;
     }
 
     public override Vector3 ProcessMotion()
@@ -52,5 +52,10 @@ public class RespawnState : BaseState
             // Change lane to right (+1)
             playerMotor.ChangeLane(1);
         }
+    }
+
+    public override void Destruct()
+    {
+        GameManager.Instance.ChangeCamera(GameCamera.Game);
     }
 }
