@@ -6,4 +6,10 @@ public class GameStateGame : GameState
         GameManager.Instance.PlayerMotor.ResumePlayer();
         GameManager.Instance.ChangeCamera(GameCamera.Game); 
     }
+
+    public override void UpdateState()
+    {
+        GameManager.Instance.WorldGeneration.ScanPosition();
+        GameManager.Instance.SceneChunkGeneration.ScanPosition();
+    }
 }
