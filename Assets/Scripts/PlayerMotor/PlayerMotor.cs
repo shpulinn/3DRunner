@@ -128,4 +128,12 @@ public class PlayerMotor : MonoBehaviour
             ChangeState(GetComponent<DeathState>());
         }
     }
+
+    public void ResetPlayer()
+    {
+        transform.position = Vector3.zero;
+        animator?.SetTrigger("Idle");
+        ChangeState(GetComponent<RunningState>());
+        PausePlayer();
+    }
 }
