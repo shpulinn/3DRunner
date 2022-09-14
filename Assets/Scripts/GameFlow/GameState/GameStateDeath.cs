@@ -1,4 +1,5 @@
 using Inputs;
+using UnityEngine;
 
 public class GameStateDeath : GameState
 {
@@ -24,5 +25,7 @@ public class GameStateDeath : GameState
     public void ToMenu()
     {
         brain.ChangeState(GetComponent<GameStateInit>());
+        GameManager.Instance.PlayerMotor.ResetPlayer();
+        GameManager.Instance.WorldGeneration.ResetWorld();
     }
 }
